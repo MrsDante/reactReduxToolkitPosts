@@ -4,6 +4,9 @@ import AddPostForm from './features/posts/AddPostForm';
 import SinglePostPage from './features/posts/SinglePostPage';
 import Layout from './components/Layout';
 import { Routes, Route } from 'react-router-dom';
+import EditPostForm from './features/posts/EditPostForm';
+
+//const CommentPage = React.lazy(() => import("./pages/CommentPage/CommentPage"));
 
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
         <Route path="post">
           <Route index element={<AddPostForm />} />
           <Route exact path=":postId" element={<SinglePostPage />} />
+          <Route path="edit/:postId" element={<EditPostForm />} />
         </Route>
 
       </Route>

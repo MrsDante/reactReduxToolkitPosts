@@ -43,7 +43,6 @@ const PostsList = () => {
 
   return (
     <section>
-        <h2>Посты</h2>
         {content}
     </section>
   )
