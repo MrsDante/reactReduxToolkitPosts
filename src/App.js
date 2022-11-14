@@ -14,9 +14,9 @@ function App() {
 
         <Route path="post">
           <Route index element={<AddPostForm />} />
-          <Route path=":postId" element={<SinglePostPage />} />
+          <Route exact path=":postId" element={<SinglePostPage />} />
         </Route>
-        
+
       </Route>
     </Routes>
   );
