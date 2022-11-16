@@ -5,16 +5,16 @@ import { selectAllPosts } from '../posts/postsSlice';
 import { selectUserById } from './usersSlice';
 
 const UserPage = () => {
-    const { userId } = useParams()
-    const user = useSelector(state => selectUserById(state, Number(userId)));
+    const { indexId } = useParams()
+    const user = useSelector(state => selectUserById(state, Number(indexId)));
 
-    console.log(user)
+    console.log(useParams())
 
     const postsForUser = useSelector(state => {
         const allPosts = selectAllPosts(state)
         //console.log(allPosts.filter(post => post.userId === Number(userId)))
         //console.log(allPosts)
-        return allPosts.filter(post => post.userId === Number(userId))
+        return allPosts.filter(post => post.userId === Number(indexId))
     });
 
     const postTitles = postsForUser.map(post => (
